@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USC and A* Map</title>
+    <link rel="icon" href="map.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+</head>
+<body>
+    <h1><span class="logo"></span>USC and A* Map</h1>
+    <input type="file" accept=".json" onchange="readDataset(event)">
+    <div id="mapid"></div>
+    <div>
+        <p id="sum-path"></p>
+    </div>
+    <div>
+        <p>Starting Node:</p>
+        <select name="Start" id="from-node" onchange="Astar()">
+            
+        </select>
+    </div>
+    <div>
+        <p>Goal Node : </p>
+        <select name="Goal" id="to-node" onchange="Astar()">
+
+        </select>
+    </div>
+    <script type="text/javascript" src="leaflet.textpath.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
