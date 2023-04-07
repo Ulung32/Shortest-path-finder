@@ -29,7 +29,7 @@ class Graph {
     constructor() {
         this.nodes = [];
         this.adjacentMatrix = [];
-        this.nodeArea = L.layerGroup([]);
+        this.nodeAre = L.layerGroup([]);
         this.edgePaths = L.layerGroup([]);
         this.shortestPath = L.layerGroup([]);
     }
@@ -42,20 +42,20 @@ class Graph {
         for (const node of this.nodes) {
             const circle = L.circle(node.getLatitudeLongitude(), {radius: 20});
             circle.bindPopup(node.name);
-            this.nodeArea.addLayer(circle);
+            this.nodeAre.addLayer(circle);
         }
     }
     // fungsi untuk menggambar jalur edge
     drawEdgePath() {
         for (let i = 0; i < this.nodes.length; i++) {
             for (let j = 0; j <= i; j++) {
-            if (this.adjacentMatrix[i][j] > 0) {
-                const line = L.polyline([this.nodes[i].getLatitudeLongitude(), this.nodes[j].getLatitudeLongitude()]);
-                line.bindPopup(String(this.adjacentMatrix[i][j]));
-                line.setText(String(this.adjacentMatrix[i][j]), {center: true});
+                if (this.adjacentMatrix[i][j] > 0) {
+                    const line = L.polyline([this.nodes[i].getLatitudeLongitude(), this.nodes[j].getLatitudeLongitude()]);
+                    line.bindPopup(String(this.adjacentMatrix[i][j]));
+                    line.setText(String(this.adjacentMatrix[i][j]), {center: true});
 
-                this.edgePaths.addLayer(line);
-            }
+                    this.edgePaths.addLayer(line);
+                }
             }
         }
     }
@@ -80,17 +80,17 @@ class Graph {
         this.drawNodeMarker();
         this.drawEdgePath();
         this.edgePaths.addTo(map);
-        this.nodeArea.addTo(map);
+        this.nodeAre.addTo(map);
     }
     // fungsi untuk membersihkan layer pada peta
     clear() {
         this.shortestPath.clearLayers();
         this.edgePaths.clearLayers();
-        this.nodeArea.clearLayers();
+        this.nodeAre.clearLayers();
     }
     // fungsi untuk mendapatkan indeks node berdasarkan nama
     getIndex(name) {
-        return this.nodes.findIndex(x => x.name === name);  
+        return this.nodes.findIndex(x => x.name === name);
     }
 }
 
@@ -123,6 +123,11 @@ function derajatToRadian(degree) {
     return radian;
 }
 
+// fungsi yang akan dijalankan ketika pengguna mengklik peta
+function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
 //VARIABEL GLOBAL
 // Inisialisasi peta dengan koordinat tertentu
 let map = L.map('mapid').setView([-6.889295, 107.610365], 17);
@@ -136,12 +141,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([-6.889295, 107.610365]).addTo(map)
     .bindPopup('ITB')
     .openPopup();
-
-// fungsi yang akan dijalankan ketika pengguna mengklik peta
-function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
-}
-
+    
 // Fungsi untuk membaca dataset
 const readDataset = (event) => {
     // Buat objek FileReader
@@ -157,13 +157,14 @@ const readDataset = (event) => {
     dataset.readAsText(event.target.files[0]);
 }
 
+// Fungsi untuk menampilkan jalur terpendek antara dua node.
 const main = (nodes, edges) => {
-    // membersihkan data pada graph
+    // Menghapus semua node dan edge yang ada pada peta.
     graph.clear();
-    // mendapatkan elemen select untuk asal dan tujuan
+    // Menghapus elemen pada dropdown list dari node asal dan tujuan.
     let from = document.getElementById("from-node");
     let goal = document.getElementById("to-node");
-    // menghapus opsi pada elemen select jika sudah ada
+    let i=0;
     if (from.length != 0 || goal.length!=0){
         while(from.length!=0 && goal.length!=0){
             from.remove(from.i);
@@ -171,15 +172,13 @@ const main = (nodes, edges) => {
             i++;
         }
     }
-    
-    // membuat node dari dataset dan menyimpannya dalam array nodeArr
+    // Inisialisasi array untuk menyimpan node-node dari graf.
     let nodeArr = [];
     for (let node of nodes) {
         let tnode = new Node(node.name, node.lat, node.lon);
         nodeArr.push(tnode);
     }
-
-    // membuat opsi pada elemen select untuk asal dan tujuan
+    // Tambahkan elemen pada dropdown list untuk node asal dan tujuan.
     for (let node of nodes){
         let elmtfrom = document.createElement("option");
         let elmtto = document.createElement("option");
@@ -188,9 +187,9 @@ const main = (nodes, edges) => {
         document.getElementById("from-node").add(elmtfrom);
         document.getElementById("to-node").add(elmtto);
     }
-    // menyimpan array nodeArr ke dalam graph
+    // Set node-node pada graf.
     graph.nodes = nodeArr;
-    // membuat matriks adjacency yang merepresentasikan jarak antara node-node
+    // Inisialisasi matriks adjacency untuk graf.
     let matrix = [];
     for(let i=0; i<nodeArr.length; i++){
         matrix[i] = [];
@@ -198,34 +197,36 @@ const main = (nodes, edges) => {
             matrix[i][j] = 0;
         }
     }
+    // Mengisi nilai pada matriks adjacency dengan jarak antar node.
     for (let edge of edges){
         var idx = 0;
         let idx_from_found = false;
         let idx_to_found = false;
         var idx_from=-1;
         var idx_to=-1;
-        // mencari node dari setiap ujung edge pada nodeArr
         while (idx < nodeArr.length && (!idx_from_found || !idx_to_found)){
+            // Cari index dari node asal pada array nodeArr.
             if (edge.from == nodeArr[idx].name && !idx_from_found){
                 idx_from = idx;
                 idx_from_found = true;
             } 
+            // Cari index dari node tujuan pada array nodeArr.
             if (edge.to == nodeArr[idx].name && !idx_to_found){
                 idx_to = idx;
                 idx_to_found = true;
             }
             idx++;
         }
-        // menghitung jarak antara dua node dan menyimpannya pada matriks adjacency
         let dist = calculateDistance(nodeArr[idx_from].lat, nodeArr[idx_from].lon, nodeArr[idx_to].lat, nodeArr[idx_to].lon);
         matrix[idx_from][idx_to] = dist.toPrecision(4);
         matrix[idx_to][idx_from] = dist.toPrecision(4);
     }
-    // menyimpan matriks adjacency pada graph dan menggambar graph pada map
+    // Set matriks adjacency pada graf dan tampilkan pada peta.
     graph.adjacentMatrix = matrix;
     graph.draw(map);
 }
 
+// FUNGSI UCS
 class PriorityQueue {
     constructor() {
       this.queue = [];
@@ -319,4 +320,76 @@ function ucs(graph, idx_from, idx_to){
 
 // const result = ucs(graf, 0, 2); //{ path: [ 0, 2 ], cost: 3 }
 // console.log(result); 
+
 // FUNGSI A*
+function Astar() {
+    // Deklarasi variabel
+    let fromnode = document.getElementById("from-node");
+    let goalnode = document.getElementById("to-node");
+    let startname = fromnode.options[fromnode.selectedIndex].text;
+    let goal = goalnode.options[goalnode.selectedIndex].text;
+    let unvisited = [];
+    let start = {
+        name: startname,
+        prev: null,
+        fValue: undefined,
+        cost: undefined
+    };
+    // Memanggil fungsi Astaralgorithm untuk mencari jalur terpendek
+    let path = Astaralgorithm(start, goal, 0, unvisited);
+    // Memutar urutan jalur
+    path.reverse();
+    // Menggambar jalur pada peta
+    graph.drawPath(path, map);
+    // Mengembalikan jalur terpendek
+    return path;
+}
+
+function Astaralgorithm(current, goal, gValue, unvisited) {
+    // Jika node yang sedang diperiksa adalah node tujuan, maka kembalikan jalur yang telah ditemukan
+    if (current.name == goal) {
+        let path = [];
+        while (current != null) {
+            path.push(current.name);
+            current = current.prev;
+        }
+        return path;
+    }
+    // Mencari indeks node saat ini di dalam graph
+    let currIdx = graph.getIndex(current.name);
+    // Memasukkan node yang terhubung dengan node saat ini ke dalam array unvisited
+    for (let i = 0; i < graph.nodes.length; i++) {
+        if (graph.adjacentMatrix[currIdx][i] > 0) {
+            let toVisit = {};
+            toVisit.name = graph.nodes[i].name;
+            toVisit.prev = current;
+            toVisit.cost = Number(graph.adjacentMatrix[currIdx][i]);
+
+            // Menghitung fValue, yaitu perkiraan jarak terpendek dari node saat ini ke node tujuan melalui node yang sedang dipertimbangkan
+            toVisit.fValue = Number(graph.nodes[i].findDistance(graph.getNode(goal))) + Number(gValue) + Number(graph.adjacentMatrix[currIdx][i]);
+            unvisited.push(toVisit);
+        }
+    }
+    // Mencari node selanjutnya dengan fValue terkecil
+    let minIdx = 0;
+    for (let i = 1; i < unvisited.length; i++) {
+        if (unvisited[i].fValue < unvisited[minIdx].fValue) {
+            minIdx = i;
+        }
+    }
+    // Mengambil node selanjutnya dan menghitung nilai gValue yang baru
+    let next = unvisited.splice(minIdx, 1);
+    let newG = gValue+next[0].cost;
+    // Melakukan rekursi untuk mencari jalur terpendek dari node selanjutnya ke node tujuan
+    return Astaralgorithm(next[0], goal, newG, unvisited);
+}
+
+function runAlgorithm() {
+    const algorithm = document.getElementById("algorithm").value;
+    
+    if (algorithm === "astar") {
+      Astar();
+    } else if (algorithm === "ucs") {
+      ucs();
+    }
+  }

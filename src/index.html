@@ -25,15 +25,16 @@
         <p id="sum-path"></p>
     </div>
     <div>
-        <p>Starting Node:</p>
-        <select name="Start" id="from-node" onchange="Astar()">
-            
+        <label for="from-node">Start Node:</label>
+        <select name="from-node" id="from-node" onchange="runAlgorithm()">
         </select>
-    </div>
-    <div>
-        <p>Goal Node : </p>
-        <select name="Goal" id="to-node" onchange="Astar()">
-
+        <label for="to-node">Goal Node:</label>
+        <select name="to-node" id="to-node" onchange="runAlgorithm()">
+        </select>
+        <label for="algorithm">Algorithm:</label>
+        <select name="algorithm" id="algorithm" onchange="runAlgorithm()">
+            <option value="astar">A* Algorithm</option>
+            <option value="ucs">Uniform Cost Search</option>
         </select>
     </div>
     <script type="text/javascript" src="leaflet.textpath.js"></script>
