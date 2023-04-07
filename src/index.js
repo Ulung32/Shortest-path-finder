@@ -385,11 +385,14 @@ function Astaralgorithm(current, goal, gValue, unvisited) {
 }
 
 function runAlgorithm() {
+    // Mendapatkan nilai dropdown "algorithm"
     const algorithm = document.getElementById("algorithm").value;
-    
+    // Jika nilai dropdown "algorithm" adalah "astar", jalankan algoritma A*
     if (algorithm === "astar") {
-      Astar();
-    } else if (algorithm === "ucs") {
-      ucs();
+        Astar();
     }
-  }
+    // Jika nilai dropdown "algorithm" adalah "ucs", jalankan algoritma UCS
+    else if (algorithm === "ucs") {
+        ucs();
+    }
+}
