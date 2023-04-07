@@ -236,7 +236,15 @@ class PriorityQueue {
       this.queue.push({node, priority});
       this.sort();
     }
-  
+    nodeIsIn(node){
+        for(let i = 0; i < this.queue.length; i++){
+          if(this.queue[i].node === node){
+            return i;
+          }
+        }
+        return -1;
+    }
+
     dequeue() {
       if (this.isEmpty()) {
         return null;
@@ -253,47 +261,58 @@ class PriorityQueue {
     }
   }
 // FUNGSI USC
-function ucs(graph, idx_from, idx_to){
+function ucs(){
+    let fromnode = document.getElementById("from-node");
+    let goalnode = document.getElementById("to-node");
+    let startname = fromnode.options[fromnode.selectedIndex].text;
+    let goalname = goalnode.options[goalnode.selectedIndex].text;
+    let startNode = graph.nodes[graph.getIndex(startname)]
+    let endNode = graph.nodes[graph.getIndex(goalname)]
+    // let idx_from = graph.getIndex(fromnode.name);
+    // let idx_to = graph.getIndex(goalnode.name);
     let queue = new PriorityQueue();
-    queue.enqueue(idx_from, 0);
+    queue.enqueue(startNode, 0);
     let parrent = new Map();
     let path = []
-    parrent.set(idx_from, null);
+    parrent.set(startNode, null);
     let visited = [];
     // visited.add(idx_from);
     while(!queue.isEmpty()){
         let nodeNow = queue.dequeue();
         let cost = nodeNow.priority;
-        node = nodeNow.node;
+        // console.log(cost);
+        let node = nodeNow.node;
         if(!visited.includes(node)){
-            if(node == idx_to){
+            if(node == endNode){
                 while(node != null){
                     // console.log(node);
-                    path.push(node);
+                    path.push(node.name);
                     node = parrent.get(node);
                     // console.log(node);
                 }
                 path.reverse();
-                return {path, cost};
+                graph.drawPath(path, map);
+                return path;
             }
             else{
-                for(let i = 0; i < graph.matrix[node].length; i++){
-                    if(graph.matrix[node][i] != 0 && node != i && i != parrent.get(node)){
-                      if(queue.nodeIsIn(i) != -1 && !visited.includes(i)){
-                        let idx = queue.nodeIsIn(i)
-                        if(queue.queue[idx].priority > cost + graph.matrix[node][i]){
-                          parrent.delete(i)
+                for(let i = 0; i < graph.adjacentMatrix[graph.getIndex(node.name)].length; i++){
+                    if(graph.adjacentMatrix[graph.getIndex(node.name)][i] != 0 && node != graph.nodes[i] && graph.nodes[i] != parrent.get(node)){
+                      if(queue.nodeIsIn(graph.nodes[i]) != -1 && !visited.includes(i)){
+                        let idx = queue.nodeIsIn(graph.nodes[i])
+                        console.log(idx)
+                        if(queue.queue[idx].priority > (cost + graph.adjacentMatrix[graph.getIndex(node.name)][i])){
+                          parrent.delete(graph.nodes[i])
                           // console.log(parrent)
                           queue.queue.splice(idx, 1);
-                          queue.enqueue(i, cost + graph.matrix[node][i]);
-                          parrent.set(i, node)
+                          queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
+                          parrent.set(graph.nodes[i], node)
                           
                         }
                       }
                       else{
-                        if(!visited.includes(i)){
-                          queue.enqueue(i, cost + graph.matrix[node][i]);
-                          parrent.set(i, node)
+                        if(!visited.includes(graph.nodes[i])){
+                          queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
+                          parrent.set(graph.nodes[i], node)
                         }
                       }
                       // // console.log("kontol")
@@ -306,7 +325,7 @@ function ucs(graph, idx_from, idx_to){
         }
         // console.log(visited)
     }
-} 
+  } 
 
 // how to use ucss
 // let graf = new Graph();
