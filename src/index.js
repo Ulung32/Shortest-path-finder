@@ -182,6 +182,9 @@ function setView() {
         case "magelang":
             map.setView([-7.584627, 110.287199], 17);
             break;
+        case "Purworejo":
+            map.setView([-7.713049, 110.007964], 17);
+            
         default:
             break;
     }
@@ -326,9 +329,9 @@ function ucs(){
             else{
                 for(let i = 0; i < graph.adjacentMatrix[graph.getIndex(node.name)].length; i++){
                     if(graph.adjacentMatrix[graph.getIndex(node.name)][i] != 0 && node != graph.nodes[i] && graph.nodes[i] != parrent.get(node)){
-                        if(queue.nodeIsIn(graph.nodes[i]) != -1 && !visited.includes(i)){
+                        if(queue.nodeIsIn(graph.nodes[i]) != -1 && !visited.includes(graph.nodes[i])){
                             let idx = queue.nodeIsIn(graph.nodes[i])
-                            console.log(idx)
+                            // console.log(idx)
                             if(queue.queue[idx].priority > (cost + graph.adjacentMatrix[graph.getIndex(node.name)][i])){
                             parrent.delete(graph.nodes[i])
                             // console.log(parrent)
@@ -340,8 +343,8 @@ function ucs(){
                         }
                         else{
                             if(!visited.includes(graph.nodes[i])){
-                            queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
-                            parrent.set(graph.nodes[i], node)
+                                queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
+                                parrent.set(graph.nodes[i], node)
                             }
                         }
                       // // console.log("kontol")

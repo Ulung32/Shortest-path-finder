@@ -1,0 +1,35 @@
+{
+    "nodes": [
+        {"name": "Alun Alun Purworejo", "lat": -7.71217601504141 , "lon": 110.00956846154939},
+        {"name": "Masjid Agung Purworejo", "lat": -7.711953768624133 , "lon": 110.00784699943584},
+        {"name": "SMPN 2 Purworejo", "lat": -7.71379780968708, "lon": 110.01195062567133},
+        {"name": "Kantor Pos", "lat": -7.7133395186288425, "lon": 110.01107686466776},
+        {"name": "Gereja Santa Perawan Maria", "lat": -7.713480497772683, "lon": 110.012389578217},
+        {"name": "SD Negeri Purworejo", "lat": -7.714508941812792,  "lon": 110.01016969276088},
+        {"name": "Kantor Bupati", "lat": -7.714199793963943,"lon" : 110.00827062925872},
+        {"name": "KODIM", "lat": -7.714942953461572, "lon" :110.00942071383565},
+        {"name" : "SMAN 7 Purworejo", "lat": -7.71828955716745, "lon": 110.00537274338103},
+        {"name" : "Patung Kuda", "lat": -7.718902362698103, "lon": 110.0059978014594},
+        {"name" : "SMPN 1 Purworejo", "lat": -7.7193730880786475, "lon":110.00330098334426},
+        {"name" : "RSUD Purworejo", "lat": -7.719708103205036, "lon":109.99648866087875},
+        {"name" : "SMAN 1 Purworejo", "lat": -7.722126365537078, "lon": 109.9936426517131},
+        {"name" : "Rumah Mutia :))", "lat": -7.7164354539989555, "lon" :109.99415948992647}
+    ],
+    "edges": [
+        {"from": "Alun Alun Purworejo", "to": "Masjid Agung Purworejo"},
+        {"from": "Alun Alun Purworejo", "to": "Kantor Pos" },
+        {"from" : "Kantor Pos", "to" : "SMPN 2 Purworejo"},
+        {"from" : "SMPN 2 Purworejo", "to" : "Gereja Santa Perawan Maria"},
+        {"from" : "Alun Alun Purworejo", "to" : "SD Negeri Purworejo"},
+        {"from" : "SD Negeri Purworejo", "to" : "Kantor Pos"},
+        {"from" : "Kantor Bupati" , "to" : "Alun Alun Purworejo"},
+        {"from" : "Kantor Bupati" , "to" : "KODIM"},
+        {"from" : "SD Negeri Purworejo", "to" : "KODIM"},
+        {"from" : "KODIM", "to" : "Patung Kuda"},
+        {"from" : "Patung Kuda", "to" : "SMAN 7 Purworejo"},
+        {"from" : "Patung Kuda", "to" : "SMPN 1 Purworejo"},
+        {"from" : "SMPN 1 Purworejo", "to" : "RSUD Purworejo"},
+        {"from" : "SMAN 1 Purworejo", "to" : "RSUD Purworejo"},
+        {"from" : "SMAN 1 Purworejo", "to" : "Rumah Mutia :))"}
+    ]
+}
