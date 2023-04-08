@@ -141,6 +141,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([-6.889295, 107.610365]).addTo(map)
     .bindPopup('ITB')
     .openPopup();
+
+document.getElementById("mapid").classList.add("show");
     
 // Fungsi untuk membaca dataset
 const readDataset = (event) => {
