@@ -1,4 +1,39 @@
 //DEFINISI KELAS
+class PriorityQueue {
+    constructor() {
+        this.queue = []; // inisialisasi antrian sebagai array kosong
+    }
+    // menambahkan simpul ke dalam antrian dengan prioritas tertentu
+    enqueue(node, priority) {
+        this.queue.push({node, priority}); // menambahkan objek dengan node dan prioritas ke dalam antrian
+        this.sort(); // memanggil metode sort() untuk mengurutkan antrian berdasarkan prioritas
+    }
+    // memeriksa apakah suatu node telah ada di dalam antrian
+    nodeIsIn(node){
+        for(let i = 0; i < this.queue.length; i++){
+            if(this.queue[i].node === node){
+                return i; // mengembalikan indeks objek yang berisi node
+            }
+        }
+        return -1; // mengembalikan -1 jika node tidak ditemukan dalam antrian
+    }
+    // menghapus dan mengembalikan objek dengan prioritas tertinggi dari antrian
+    dequeue() {
+        if (this.isEmpty()) {
+            return null; // jika antrian kosong, mengembalikan null
+        }
+        return this.queue.shift(); // menghapus dan mengembalikan objek pertama dalam antrian
+    }
+    // mengurutkan antrian berdasarkan prioritas
+    sort() {
+        this.queue.sort((a, b) => a.priority - b.priority); // menggunakan fungsi sort() JavaScript dengan perbandingan prioritas
+    }
+    // memeriksa apakah antrian kosong atau tidak
+    isEmpty() {
+        return this.queue.length === 0; // mengembalikan true jika antrian kosong
+    }
+}
+
 class Node {
     // Membuat constructor dengan parameter name, lat, dan lon
     constructor(name, lat, lon) {
@@ -53,7 +88,6 @@ class Graph {
                     const line = L.polyline([this.nodes[i].getLatitudeLongitude(), this.nodes[j].getLatitudeLongitude()]);
                     line.bindPopup(String(this.adjacentMatrix[i][j]));
                     line.setText(String(this.adjacentMatrix[i][j]), {center: true});
-
                     this.edgePaths.addLayer(line);
                 }
             }
@@ -73,7 +107,7 @@ class Graph {
             sum += calculateDistance(from.lat, from.lon, to.lat, to.lon);
         }
         const textsum = document.getElementById("sum-path");
-        textsum.innerHTML = "Shortest path's distance: " + sum.toString();
+        textsum.innerHTML = "Shortest path's distance: " + sum.toString() + " km";
     }
     // fungsi untuk menggambar node dan edge pada peta
     draw(map) {
@@ -93,6 +127,8 @@ class Graph {
         return this.nodes.findIndex(x => x.name === name);
     }
 }
+
+
 
 //DEFINISI FUNGSI HELPER
 // Membuat fungsi calculateDistance dengan parameter latitude1, longitude1, latitude2, dan longitude2
@@ -131,6 +167,25 @@ function onMapClick(e) {
 //VARIABEL GLOBAL
 // Inisialisasi peta dengan koordinat tertentu
 let map = L.map('mapid').setView([-6.889295, 107.610365], 17);
+function setView() {
+    var view = document.getElementById("view").value;
+    switch (view) {
+        case "itb":
+            map.setView([-6.889295, 107.610365], 17);
+            break;
+        case "dago":
+            map.setView([-6.885172, 107.613724], 17);
+            break;
+        case "buahbatu":
+            map.setView([-6.954339, 107.638979], 17);
+            break
+        case "magelang":
+            map.setView([-7.584627, 110.287199], 17);
+            break;
+        default:
+            break;
+    }
+}
 // Membuat objek Graph baru
 const graph = new Graph();
 // Menambahkan tile layer pada peta
@@ -141,6 +196,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([-6.889295, 107.610365]).addTo(map)
     .bindPopup('ITB')
     .openPopup();
+L.marker([-6.885172, 107.613724]).addTo(map)
+    .bindPopup('Simpang Dago');
+L.marker([-6.954339, 107.638979]).addTo(map)
+    .bindPopup('Buah Batu');
+L.marker([-7.584627, 110.287199]).addTo(map)
+    .bindPopup('Muntilan');
 
 document.getElementById("mapid").classList.add("show");
     
@@ -229,40 +290,6 @@ const main = (nodes, edges) => {
 }
 
 // FUNGSI UCS
-class PriorityQueue {
-    constructor() {
-      this.queue = [];
-    }
-  
-    enqueue(node, priority) {
-      this.queue.push({node, priority});
-      this.sort();
-    }
-    nodeIsIn(node){
-        for(let i = 0; i < this.queue.length; i++){
-          if(this.queue[i].node === node){
-            return i;
-          }
-        }
-        return -1;
-    }
-
-    dequeue() {
-      if (this.isEmpty()) {
-        return null;
-      }
-      return this.queue.shift();
-    }
-  
-    sort() {
-      this.queue.sort((a, b) => a.priority - b.priority);
-    }
-  
-    isEmpty() {
-      return this.queue.length === 0;
-    }
-  }
-// FUNGSI USC
 function ucs(){
     let fromnode = document.getElementById("from-node");
     let goalnode = document.getElementById("to-node");
@@ -299,24 +326,24 @@ function ucs(){
             else{
                 for(let i = 0; i < graph.adjacentMatrix[graph.getIndex(node.name)].length; i++){
                     if(graph.adjacentMatrix[graph.getIndex(node.name)][i] != 0 && node != graph.nodes[i] && graph.nodes[i] != parrent.get(node)){
-                      if(queue.nodeIsIn(graph.nodes[i]) != -1 && !visited.includes(i)){
-                        let idx = queue.nodeIsIn(graph.nodes[i])
-                        console.log(idx)
-                        if(queue.queue[idx].priority > (cost + graph.adjacentMatrix[graph.getIndex(node.name)][i])){
-                          parrent.delete(graph.nodes[i])
-                          // console.log(parrent)
-                          queue.queue.splice(idx, 1);
-                          queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
-                          parrent.set(graph.nodes[i], node)
-                          
+                        if(queue.nodeIsIn(graph.nodes[i]) != -1 && !visited.includes(i)){
+                            let idx = queue.nodeIsIn(graph.nodes[i])
+                            console.log(idx)
+                            if(queue.queue[idx].priority > (cost + graph.adjacentMatrix[graph.getIndex(node.name)][i])){
+                            parrent.delete(graph.nodes[i])
+                            // console.log(parrent)
+                            queue.queue.splice(idx, 1);
+                            queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
+                            parrent.set(graph.nodes[i], node)
+                            
+                            }
                         }
-                      }
-                      else{
-                        if(!visited.includes(graph.nodes[i])){
-                          queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
-                          parrent.set(graph.nodes[i], node)
+                        else{
+                            if(!visited.includes(graph.nodes[i])){
+                            queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
+                            parrent.set(graph.nodes[i], node)
+                            }
                         }
-                      }
                       // // console.log("kontol")
                       // console.log(parrent.i + " " + node)
                     }
@@ -327,20 +354,7 @@ function ucs(){
         }
         // console.log(visited)
     }
-  } 
-
-// how to use ucss
-// let graf = new Graph();
-// graf.matrix = [
-//   [0, 5, 3, 0],
-//   [1, 0, 3, 4],
-//   [3, 1, 0, 1],
-//   [0, 4, 1, 0]]
-
-// graf.node = [1,2,3,4]
-
-// const result = ucs(graf, 0, 2); //{ path: [ 0, 2 ], cost: 3 }
-// console.log(result); 
+} 
 
 // FUNGSI A*
 function Astar() {
@@ -405,6 +419,7 @@ function Astaralgorithm(current, goal, gValue, unvisited) {
     return Astaralgorithm(next[0], goal, newG, unvisited);
 }
 
+// Fungsi untuk menjalankan algoritma yang dipilih
 function runAlgorithm() {
     // Mendapatkan nilai dropdown "algorithm"
     const algorithm = document.getElementById("algorithm").value;
