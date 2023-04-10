@@ -83,7 +83,7 @@ git clone https://github.com/Ulung32/Tucil3_13521122_13521166.git
 
 ## Video Captures
 
-![TUCIL3 GIF](https://github.com/rifqifarhansyah/Tubes2_dicarryVieridanZaki/blob/main/img/TreasureHunter.gif?raw=true)
+![TUCIL3 GIF](https://github.com/Ulung32/Tucil3_13521122_13521166/blob/main/image/TUCIL3.gif?raw=true)
 
 <a name="screenshots"></a>
 
