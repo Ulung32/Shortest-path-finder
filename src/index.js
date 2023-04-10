@@ -64,7 +64,7 @@ class Graph {
     constructor() {
         this.nodes = [];
         this.adjacentMatrix = [];
-        this.nodeAre = L.layerGroup([]);
+        this.nodeArea = L.layerGroup([]);
         this.edgePaths = L.layerGroup([]);
         this.shortestPath = L.layerGroup([]);
     }
@@ -77,7 +77,7 @@ class Graph {
         for (const node of this.nodes) {
             const circle = L.circle(node.getLatitudeLongitude(), {radius: 20});
             circle.bindPopup(node.name);
-            this.nodeAre.addLayer(circle);
+            this.nodeArea.addLayer(circle);
         }
     }
     // fungsi untuk menggambar jalur edge
@@ -114,13 +114,13 @@ class Graph {
         this.drawNodeMarker();
         this.drawEdgePath();
         this.edgePaths.addTo(map);
-        this.nodeAre.addTo(map);
+        this.nodeArea.addTo(map);
     }
     // fungsi untuk membersihkan layer pada peta
     clear() {
         this.shortestPath.clearLayers();
         this.edgePaths.clearLayers();
-        this.nodeAre.clearLayers();
+        this.nodeArea.clearLayers();
     }
     // fungsi untuk mendapatkan indeks node berdasarkan nama
     getIndex(name) {
