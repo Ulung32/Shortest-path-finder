@@ -1,39 +1,30 @@
 //DEFINISI KELAS
 class PriorityQueue {
     constructor() {
-        this.queue = []; // inisialisasi antrian sebagai array kosong
+      this.queue = [];
     }
-    // menambahkan simpul ke dalam antrian dengan prioritas tertentu
-    enqueue(node, priority) {
-        this.queue.push({node, priority}); // menambahkan objek dengan node dan prioritas ke dalam antrian
-        this.sort(); // memanggil metode sort() untuk mengurutkan antrian berdasarkan prioritas
+  
+    enqueue(node) {
+      this.queue.push(node);
+      this.queue.sort((a, b) => a.cost - b.cost);
     }
-    // memeriksa apakah suatu node telah ada di dalam antrian
-    nodeIsIn(node){
-        for(let i = 0; i < this.queue.length; i++){
-            if(this.queue[i].node === node){
-                return i; // mengembalikan indeks objek yang berisi node
-            }
-        }
-        return -1; // mengembalikan -1 jika node tidak ditemukan dalam antrian
-    }
-    // menghapus dan mengembalikan objek dengan prioritas tertinggi dari antrian
+  
     dequeue() {
-        if (this.isEmpty()) {
-            return null; // jika antrian kosong, mengembalikan null
-        }
-        return this.queue.shift(); // menghapus dan mengembalikan objek pertama dalam antrian
+      return this.queue.shift();
     }
-    // mengurutkan antrian berdasarkan prioritas
-    sort() {
-        this.queue.sort((a, b) => a.priority - b.priority); // menggunakan fungsi sort() JavaScript dengan perbandingan prioritas
-    }
-    // memeriksa apakah antrian kosong atau tidak
+  
     isEmpty() {
-        return this.queue.length === 0; // mengembalikan true jika antrian kosong
+      return this.queue.length === 0;
     }
-}
-
+  }
+  
+  class parrentNode {
+    constructor(id, parrent, cost) {
+      this.id = id;
+      this.parrent = parrent;
+      this.cost = cost;
+    }
+  }
 class Node {
     // Membuat constructor dengan parameter name, lat, dan lon
     constructor(name, lat, lon) {
@@ -298,64 +289,33 @@ function ucs(){
     let goalnode = document.getElementById("to-node");
     let startname = fromnode.options[fromnode.selectedIndex].text;
     let goalname = goalnode.options[goalnode.selectedIndex].text;
-    let startNode = graph.nodes[graph.getIndex(startname)]
-    let endNode = graph.nodes[graph.getIndex(goalname)]
-    // let idx_from = graph.getIndex(fromnode.name);
-    // let idx_to = graph.getIndex(goalnode.name);
+    let idx_from = graph.getIndex(startname);
+    let idx_to = graph.getIndex(goalname);
+    
+    let visited = []
     let queue = new PriorityQueue();
-    queue.enqueue(startNode, 0);
-    let parrent = new Map();
-    let path = []
-    parrent.set(startNode, null);
-    let visited = [];
-    // visited.add(idx_from);
+    queue.enqueue(new parrentNode(idx_from, null, 0), 0);
     while(!queue.isEmpty()){
-        let nodeNow = queue.dequeue();
-        let cost = nodeNow.priority;
-        // console.log(cost);
-        let node = nodeNow.node;
-        if(!visited.includes(node)){
-            if(node == endNode){
-                while(node != null){
-                    // console.log(node);
-                    path.push(node.name);
-                    node = parrent.get(node);
-                    // console.log(node);
-                }
-                path.reverse();
-                graph.drawPath(path, map);
-                return path;
+        let node = queue.dequeue();
+        let cost = node.cost
+        if(node.id === idx_to){
+            let path = []
+            let currNode = node
+            while(currNode !== null){
+                console.log(graph.nodes[currNode.id].name)
+                path.push(graph.nodes[currNode.id].name)
+                currNode = currNode.parrent
             }
-            else{
-                for(let i = 0; i < graph.adjacentMatrix[graph.getIndex(node.name)].length; i++){
-                    if(graph.adjacentMatrix[graph.getIndex(node.name)][i] != 0 && node != graph.nodes[i] && graph.nodes[i] != parrent.get(node)){
-                        if(queue.nodeIsIn(graph.nodes[i]) != -1 && !visited.includes(graph.nodes[i])){
-                            let idx = queue.nodeIsIn(graph.nodes[i])
-                            // console.log(idx)
-                            if(queue.queue[idx].priority > (cost + graph.adjacentMatrix[graph.getIndex(node.name)][i])){
-                            parrent.delete(graph.nodes[i])
-                            // console.log(parrent)
-                            queue.queue.splice(idx, 1);
-                            queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
-                            parrent.set(graph.nodes[i], node)
-                            
-                            }
-                        }
-                        else{
-                            if(!visited.includes(graph.nodes[i])){
-                                queue.enqueue(graph.nodes[i], cost + graph.adjacentMatrix[graph.getIndex(node.name)][i]);
-                                parrent.set(graph.nodes[i], node)
-                            }
-                        }
-                      // // console.log("kontol")
-                      // console.log(parrent.i + " " + node)
-                    }
-                }
-                // console.log(parrent)
-            }
-            visited.push(node);
+            path.reverse();
+            graph.drawPath(path, map);
+            return path;
         }
-        // console.log(visited)
+        visited[node.id] = true
+        for(let i = 0; i < graph.adjacentMatrix[node.id].length; i++){
+            if(!visited[i] && graph.adjacentMatrix[node.id][i] !== 0){
+                queue.enqueue(new parrentNode(i, node, Math.abs(graph.adjacentMatrix[node.id][i])+cost), Math.abs(graph.adjacentMatrix[node.id][i])+cost)
+            }
+        }
     }
 } 
 
