@@ -1,0 +1,46 @@
+{
+    "nodes": [
+        {"name": "Masjid Agung Buah Batu", "lat": -6.954295266063078, "lon" : 107.63991356303526},
+        {"name": "Pasar Kordon Kujangsari", "lat": -6.954223562353739, "lon":107.63917917247275},
+        {"name": "Tugu Kordon", "lat": -6.95403235240868, "lon":107.64025066034264},
+        {"name": "Pegadaian Pasar Kordon", "lat": -6.954980434293251, "lon": 107.6389825323762},
+        {"name": "Pertigaan Gang Empang", "lat": -6.956996022375028, "lon": 107.63946793751319},
+        {"name": "Stasiun Bandung", "lat": -6.958921940600545, "lon":107.63916743090337},
+        {"name": "SPBU Buah Batu", "lat": -6.960483469967183, "lon": 107.63876211151195},
+        {"name": "Aragon travel", "lat": -6.961857770866447, "lon": 107.6388383597404},
+        {"name": "Praktek Spesialis Kulit Dan Kelamin dr Primedhia SpKK", "lat": -6.962387572733764, "lon": 107.63840093585347},
+        {"name": "Gerbang tol buah batu", "lat": -6.961318371476772, "lon": 107.63649631786441},
+        {"name": "Masjid Baburrahman", "lat": -6.961036153139089, "lon": 107.6407878523069},
+        {"name": "Kompleks Sapta Taruna (PU)", "lat": -6.965226670051706, "lon":107.63815767607245},
+        {"name": "Transmart Buah Batu", "lat": -6.9667960080370985, "lon": 107.63904699342923},
+        {"name": "Puskesmas Bojongsoang", "lat": -6.967537217338871, "lon": 107.63731892302378},
+        {"name": "Jalan Telekomunikasi", "lat": -6.972793256825605, "lon": 107.63597941173546},
+        {"name": "Bundaran Tel U", "lat":-6.97244118903242, "lon": 107.63401789557321},
+        {"name": "Tel U", "lat": -6.973064772163198, "lon": 107.63148114235497},
+        {"name": "Masjid Syamsul Ulum Tel U", "lat": -6.97543119872005, "lon": 107.63212263824599},
+        {"name": "Telkom University Landmark Tower (TULT)", "lat": -6.969301273947901, "lon": 107.62858004907605}
+
+    ],
+    "edges": [
+        {"from": "Masjid Agung Buah Batu", "to": "Pasar Kordon Kujangsari"},
+        {"from":"Masjid Agung Buah Batu", "to": "Tugu Kordon"},
+        {"from": "Pasar Kordon Kujangsari", "to": "Tugu Kordon"},
+        {"from": "Pegadaian Pasar Kordon", "to": "Pasar Kordon Kujangsari"},
+        {"from":"Pegadaian Pasar Kordon", "to": "Pertigaan Gang Empang"},
+        {"from": "Stasiun Bandung", "to": "Pertigaan Gang Empang"},
+        {"from": "Stasiun Bandung", "to": "SPBU Buah Batu"},
+        {"from": "Aragon travel", "to": "Stasiun Bandung"},
+        {"from": "Praktek Spesialis Kulit Dan Kelamin dr Primedhia SpKK", "to": "Aragon travel"},
+        {"from": "Gerbang tol buah batu", "to": "Aragon travel"},
+        {"from": "Masjid Baburrahman", "to": "SPBU Buah Batu"},
+        {"from": "Kompleks Sapta Taruna (PU)", "to": "Aragon travel"},
+        {"from": "Kompleks Sapta Taruna (PU)", "to": "Transmart Buah Batu"},
+        {"from": "Transmart Buah Batu", "to": "Puskesmas Bojongsoang"},
+        {"from": "Puskesmas Bojongsoang", "to": "Kompleks Sapta Taruna (PU)"},
+        {"from": "Puskesmas Bojongsoang", "to": "Jalan Telekomunikasi"},
+        {"from": "Jalan Telekomunikasi", "to": "Bundaran Tel U"},
+        {"from": "Tel U", "to": "Bundaran Tel U"},
+        {"from": "Bundaran Tel U", "to": "Masjid Syamsul Ulum Tel U"},
+        {"from": "Telkom University Landmark Tower (TULT)", "to": "Bundaran Tel U"}
+    ]
+}

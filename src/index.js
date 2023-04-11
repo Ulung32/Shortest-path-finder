@@ -318,6 +318,7 @@ function ucs(){
             }
         }
     }
+    return null
 } 
 
 // FUNGSI A*
