@@ -258,37 +258,6 @@ const main = (nodes, edges) => {
             }
         }
     }
-    // for(let i=0; i<nodeArr.length; i++){
-    //     matrix[i] = [];
-    //     for(let j=0; j<nodeArr.length; j++){
-    //         matrix[i][j] = 0;
-    //     }
-    // }
-    // Mengisi nilai pada matriks adjacency dengan jarak antar node.
-    // for (let edge of edges){
-    //     var idx = 0;
-    //     let idx_from_found = false;
-    //     let idx_to_found = false;
-    //     var idx_from=-1;
-    //     var idx_to=-1;
-    //     while (idx < nodeArr.length && (!idx_from_found || !idx_to_found)){
-    //         // Cari index dari node asal pada array nodeArr.
-    //         if (edge.from == nodeArr[idx].name && !idx_from_found){
-    //             idx_from = idx;
-    //             idx_from_found = true;
-    //         } 
-    //         // Cari index dari node tujuan pada array nodeArr.
-    //         if (edge.to == nodeArr[idx].name && !idx_to_found){
-    //             idx_to = idx;
-    //             idx_to_found = true;
-    //         }
-    //         idx++;
-    //     }
-    //     let dist = calculateDistance(nodeArr[idx_from].lat, nodeArr[idx_from].lon, nodeArr[idx_to].lat, nodeArr[idx_to].lon);
-    //     matrix[idx_from][idx_to] = dist.toPrecision(4);
-    //     matrix[idx_to][idx_from] = dist.toPrecision(4);
-    // }
-    // Set matriks adjacency pada graf dan tampilkan pada peta.
     graph.adjacentMatrix = matrix;
     graph.draw(map);
 }
