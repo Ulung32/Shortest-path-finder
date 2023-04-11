@@ -101,7 +101,7 @@ git clone https://github.com/Ulung32/Tucil3_13521122_13521166.git
   <img src="/image/SS4.png/">
   <p>Gambar 4. Algoritma UCS</p>
   <nl>
-  <img src="/image/SS4.png/">
+  <img src="/image/SS5.png/">
   <p>Gambar 5. File Config Peta</p>
   <nl>
 </p>
