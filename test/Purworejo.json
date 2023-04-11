@@ -16,20 +16,75 @@
         {"name" : "Rumah Mutia :))", "lat": -7.7164354539989555, "lon" :109.99415948992647}
     ],
     "edges": [
-        {"from": "Alun Alun Purworejo", "to": "Masjid Agung Purworejo"},
-        {"from": "Alun Alun Purworejo", "to": "Kantor Pos" },
-        {"from" : "Kantor Pos", "to" : "SMPN 2 Purworejo"},
-        {"from" : "SMPN 2 Purworejo", "to" : "Gereja Santa Perawan Maria"},
-        {"from" : "Alun Alun Purworejo", "to" : "SD Negeri Purworejo"},
-        {"from" : "SD Negeri Purworejo", "to" : "Kantor Pos"},
-        {"from" : "Kantor Bupati" , "to" : "Alun Alun Purworejo"},
-        {"from" : "Kantor Bupati" , "to" : "KODIM"},
-        {"from" : "SD Negeri Purworejo", "to" : "KODIM"},
-        {"from" : "KODIM", "to" : "Patung Kuda"},
-        {"from" : "Patung Kuda", "to" : "SMAN 7 Purworejo"},
-        {"from" : "Patung Kuda", "to" : "SMPN 1 Purworejo"},
-        {"from" : "SMPN 1 Purworejo", "to" : "RSUD Purworejo"},
-        {"from" : "SMAN 1 Purworejo", "to" : "RSUD Purworejo"},
-        {"from" : "SMAN 1 Purworejo", "to" : "Rumah Mutia :))"}
+        [
+            0, 1, 0, 1, 0, 1,
+            1, 0, 0, 0, 0, 0,
+            0, 0
+        ],
+        [
+            1, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0,
+            0, 0
+        ],
+        [
+            0, 0, 0, 1, 1, 0,
+            0, 0, 0, 0, 0, 0,
+            0, 0
+        ],
+        [
+            1, 0, 1, 0, 0, 1,
+            0, 0, 0, 0, 0, 0,
+            0, 0
+        ],
+        [
+            0, 0, 1, 0, 0, 0,
+            0, 0, 0, 0, 0, 0,
+            0, 0
+        ],
+        [
+            1, 0, 0, 1, 0, 0,
+            0, 1, 0, 0, 0, 0,
+            0, 0
+        ],
+        [
+            1, 0, 0, 0, 0, 0,
+            0, 1, 0, 0, 0, 0,
+            0, 0
+        ],
+        [
+            0, 0, 0, 0, 0, 1,
+            1, 0, 0, 1, 0, 0,
+            0, 0
+        ],
+        [
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 1, 0, 0,
+            0, 0
+        ],
+        [
+            0, 0, 0, 0, 0, 0,
+            0, 1, 1, 0, 1, 0,
+            0, 0
+        ],
+        [
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 1, 0, 1,
+            0, 0
+        ],
+        [
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 1, 0,
+            1, 0
+        ],
+        [
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 1,
+            0, 1
+        ],
+        [
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0,
+            1, 0
+        ]
     ]
 }

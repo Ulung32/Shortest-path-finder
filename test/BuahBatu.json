@@ -22,25 +22,100 @@
 
     ],
     "edges": [
-        {"from": "Masjid Agung Buah Batu", "to": "Pasar Kordon Kujangsari"},
-        {"from":"Masjid Agung Buah Batu", "to": "Tugu Kordon"},
-        {"from": "Pasar Kordon Kujangsari", "to": "Tugu Kordon"},
-        {"from": "Pegadaian Pasar Kordon", "to": "Pasar Kordon Kujangsari"},
-        {"from":"Pegadaian Pasar Kordon", "to": "Pertigaan Gang Empang"},
-        {"from": "Stasiun Bandung", "to": "Pertigaan Gang Empang"},
-        {"from": "Stasiun Bandung", "to": "SPBU Buah Batu"},
-        {"from": "Aragon travel", "to": "Stasiun Bandung"},
-        {"from": "Praktek Spesialis Kulit Dan Kelamin", "to": "Aragon travel"},
-        {"from": "Gerbang tol buah batu", "to": "Aragon travel"},
-        {"from": "Masjid Baburrahman", "to": "SPBU Buah Batu"},
-        {"from": "Kompleks Sapta Taruna (PU)", "to": "Aragon travel"},
-        {"from": "Kompleks Sapta Taruna (PU)", "to": "Transmart Buah Batu"},
-        {"from": "Transmart Buah Batu", "to": "Puskesmas Bojongsoang"},
-        {"from": "Puskesmas Bojongsoang", "to": "Kompleks Sapta Taruna (PU)"},
-        {"from": "Puskesmas Bojongsoang", "to": "Jalan Telekomunikasi"},
-        {"from": "Jalan Telekomunikasi", "to": "Bundaran Tel U"},
-        {"from": "Tel U", "to": "Bundaran Tel U"},
-        {"from": "Bundaran Tel U", "to": "Masjid Syamsul Ulum Tel U"},
-        {"from": "Telkom University Landmark Tower (TULT)", "to": "Bundaran Tel U"}
-    ]
+        [
+          0, 1, 1, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          1, 0, 1, 1, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          1, 1, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 1, 0, 0, 1, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 1, 0, 1, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 1, 0, 1,
+          1, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 1, 0,
+          0, 0, 0, 1, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 1, 0,
+          0, 1, 1, 0, 1, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          1, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          1, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 1,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          1, 0, 0, 0, 0, 1, 1,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 1, 0, 1,
+          0, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 1, 1, 0,
+          1, 0, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 1,
+          0, 1, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          1, 0, 1, 1, 1
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 1, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 1, 0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0,
+          0, 1, 0, 0, 0
+        ]
+      ]
 }

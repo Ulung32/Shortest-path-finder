@@ -32,42 +32,185 @@
         {"name": "Masjid Kyai Krapyak", "lat":-7.595327123909633, "lon": 110.28355350675919}
     ],
     "edges": [
-        {"from": "Klenteng Hok An Kiong", "to": "Perempatan Sayangan"},
-        {"from": "Perempatan Tugubesi", "to": "Klenteng Hok An Kiong"},
-        {"from": "Pasar Jambu", "to": "Perempatan Tugubesi"},
-        {"from": "Perempatan Sayangan", "to": "Polsek Muntilan"},
-        {"from": "Perempatan Sayangan", "to": "PMI"},
-        {"from": "Polsek Muntilan", "to": "PMI"},
-        {"from": "PMI", "to": "RSUD Muntilan"},
-        {"from": "RSUD Muntilan", "to": "Gereja Santo Antonius"},
-        {"from": "RSUD Muntilan", "to": "Lapangan Pasturan"},
-        {"from": "Lapangan Pasturan", "to": "Gereja Santo Antonius"},
-        {"from": "Gereja Santo Antonius", "to": "Perikanan"},
-        {"from": "Perikanan", "to": "Rumah Rifqi"},
-        {"from": "Rumah Rifqi", "to": "Tape Ketan"},
-        {"from": "SMPN 1 Muntilan", "to": "Tape Ketan"},
-        {"from": "Tape Ketan", "to": "Pasar Jambu"},
-        {"from": "Pasar Jambu", "to": "Warung Blendrang"},
-        {"from": "Warung Blendrang", "to": "Watucongol"},
-        {"from": "Watucongol", "to": "Lapangan Gunungpring"},
-        {"from": "Lapangan Gunungpring", "to": "Makam Gunungpring"},
-        {"from": "Makam Gunungpring", "to": "Kolam Renang Semilir"},
-        {"from": "Candi Ngawen", "to": "Kolam Renang Semilir"},
-        {"from": "Watucongol", "to": "Candi Ngawen"},
-        {"from": "Klenteng Hok An Kiong", "to": "Pasar Muntilan"},
-        {"from": "Pasar Muntilan", "to": "Terminal"},
-        {"from": "Terminal", "to": "Pasar Manuk"},
-        {"from": "Terminal", "to": "Pasar Sayur"},
-        {"from": "Pasar Manuk", "to": "RSPD"},
-        {"from": "Pasar Sayur", "to": "RSPD"},
-        {"from": "RSPD", "to": "Pusat Pemahatan Batu"},
-        {"from": "Pusat Pemahatan Batu", "to": "Taman Bambu Runcing"},
-        {"from": "Taman Bambu Runcing", "to": "Pasar Hewan"},
-        {"from": "Pasar Hewan", "to": "Pasar Ayam"},
-        {"from": "Pasar Ayam", "to": "Perempatan Sayangan"},
-        {"from": "Pasar Ayam", "to": "Pasar Manuk"},
-        {"from": "Masjid Kyai Krapyak", "to": "SMPN 2 Muntilan"},
-        {"from": "SMPN 2 Muntilan", "to": "SMPN 1 Muntilan"},
-        {"from": "Masjid Kyai Krapyak", "to": "Watucongol"}
-    ]
+        [
+          0, 1, 0, 0, 0, 0, 1, 1, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          1, 0, 1, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 1, 1, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 1, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 1, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 1, 1, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 1, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 1, 0, 1, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 1, 1, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          1, 0, 0
+        ],
+        [
+          1, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 1, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          1, 0, 0, 0, 0, 0, 0, 0, 1,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 1, 0,
+          1, 1, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 1,
+          0, 0, 1, 0, 0, 0, 1, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 1,
+          0, 0, 1, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          1, 1, 0, 0, 1, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 1, 1, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 1, 1, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 1, 0, 0, 1, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 1, 0, 0, 0, 0, 0, 0, 0,
+          1, 0, 0, 0, 0, 1, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 1, 1, 1, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          1, 1, 0, 1, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 1,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 1, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 1, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 1,
+          0, 0, 1, 0, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 1, 0, 0, 1, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 1,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          1, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 1, 0, 0, 1, 0, 0, 1,
+          0, 0, 1
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 1, 0, 1, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 1, 0, 1, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 1, 0, 1,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 1, 0, 0, 1, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 1, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 1, 0, 0, 0, 0, 0,
+          0, 0, 0
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          1, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 1
+        ],
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 1, 0, 0, 0, 0,
+          0, 1, 0
+        ]
+      ]
 }

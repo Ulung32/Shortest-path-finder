@@ -26,35 +26,125 @@
       {"name": "CAS", "lat": -6.888498, "lon": 107.611545}
     ],
     "edges": [
-      {"from": "Gerbang Depan ITB", "to": "Pintu Parkir SR"},
-      {"from": "Gerbang Depan ITB", "to": "Pintu Parkir Sipil"},
-      {"from": "Gerbang Depan ITB", "to": "Lapbas Lapcin"},
-      {"from": "Pertigaan Boromeus", "to": "Pintu Parkir SR"},
-      {"from": "Lapbas Lapcin", "to": "Labtek V/VIII"},
-      {"from": "Labtek V/VIII", "to": "GKUT"},
-      {"from": "Labtek V/VIII", "to": "GKUB"},
-      {"from": "Pintu Parkir Sipil", "to": "GKUB"},
-      {"from": "Pintu Parkir SR", "to": "GKUT"},
-      {"from": "GKUT", "to": "CAS"},
-      {"from": "CAS", "to": "CRCS"},
-      {"from": "CAS", "to": "Sunken Court"},
-      {"from": "Sunken Court", "to": "Gerbang tunnel"},
-      {"from": "Gerbang tunnel", "to": "CRCS"},
-      {"from": "Gerbang tunnel", "to": "Saraga"},
-      {"from": "Saraga", "to": "Sabuga"},
-      {"from": "Tamansari-Siliwangi", "to": "Simpang Dago"},
-      {"from": "Tamansari-Siliwangi", "to": "Saraga"},
-      {"from": "Tamansari-Siliwangi", "to": "Sangkuriang"},
-      {"from": "Tamansari-Siliwangi", "to": "Crisbar"},
-      {"from": "Crisbar", "to": "Borma Dago"},
-      {"from": "Simpang Dago", "to": "Borma Dago"},
-      {"from": "Pintu Parkir Sipil", "to": "Kebun Binatang"},
-      {"from": "Kebun Binatang", "to": "TamFest"},
-      {"from": "TamFest", "to": "Taman Segitiga"},
-      {"from": "Taman Segitiga", "to": "Tamansari-Siliwangi"},
-      {"from": "Simpang Dago", "to": "ITHB"},
-      {"from": "Simpang Dago", "to": "Pertigaan Boromeus"},
-      {"from": "Labtek V/VIII", "to": "Oktagon dll"},
-      {"from": "Oktagon dll", "to": "Sunken Court"}
+      [
+        0, 1, 1, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        1, 0, 0, 1, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        1, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 1, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0
+      ],
+      [
+        1, 0, 0, 0, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 1, 0, 1, 1,
+        1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 1, 0, 0, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1
+      ],
+      [
+        0, 0, 1, 0, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 1, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 1, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 0, 1, 0, 0, 0,
+        1, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1
+      ],
+      [
+        0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 1, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0,
+        0, 1, 1, 1, 0, 1, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 0, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 1, 0, 1, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 0, 0, 1, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 1, 0, 0
+      ],
+      [
+        0, 0, 0, 0, 0, 0, 1, 0,
+        0, 1, 0, 0, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+      ]
     ]
 }
