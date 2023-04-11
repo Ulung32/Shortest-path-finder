@@ -1,7 +1,7 @@
 # Tucil3_13521122_13521166
 <h2 align="center">
-Algoritma UCS dan A* untuk Menentukan Lintasan 
-Terpendek<br/>
+  <a href="https://tucil-3-g7s9.vercel.app/" target="_blank">Algoritma UCS dan A* untuk Menentukan Lintasan 
+Terpendek</a>
 </h2>
 <hr>
 
