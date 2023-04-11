@@ -88,20 +88,24 @@ git clone https://github.com/Ulung32/Tucil3_13521122_13521166.git
 <a name="screenshots"></a>
 
 ## Screenshots
-ON GOING
-```
 <p>
-  <img src="/img/SS1.png/">
-  <p>Figure 1. Config File (*txt)</p>
+  <img src="/image/SS1.png/">
+  <p>Gambar 1. Tampilan Awal Program</p>
   <nl>
-  <img src="/img/SS2.png/">
-  <p>Figure 2. Initial Appearance of the Program</p>
+  <img src="/image/SS2.png/">
+  <p>Gambar 2. Visualisasi Peta</p>
   <nl>
-  <img src="/img/SS3.png/">
-  <p>Figure 3. Result</p>
+  <img src="/image/SS3.png/">
+  <p>Gambar 3. Algoritma A*</p>
+  <nl>
+  <img src="/image/SS4.png/">
+  <p>Gambar 4. Algoritma UCS</p>
+  <nl>
+  <img src="/image/SS4.png/">
+  <p>Gambar 5. File Config Peta</p>
   <nl>
 </p>
-```
+
 
 <a name="structure"></a>
 
@@ -109,13 +113,16 @@ ON GOING
 ```bash
 │   README.md
 │
-├───bin
-│       CR7isTheBest.txt
-│
 ├───doc
 │       Tucil3-Stima-2023.pdf
+│       Tucil3_13521122_13521166.pdf
 │
 ├───image
+│       SS1.png
+│       SS2.png
+│       SS3.png
+│       SS4.png
+│       SS5.png
 │       TUCIL3.gif
 │
 ├───src
@@ -126,6 +133,7 @@ ON GOING
 │       style.css
 │
 └───test
+        BuahBatu.json
         ITB.json
         Magelang.json
         Purworejo.json
@@ -134,7 +142,7 @@ ON GOING
 <a name="project-status">
 
 ## Project Status
-Project is: _uncomplete_
+Project is: _complete_
 
 <a name="room-for-improvement">
 
