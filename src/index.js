@@ -1,30 +1,31 @@
 //DEFINISI KELAS
 class PriorityQueue {
+    // Membuat constructor tanpa parameter
     constructor() {
-      this.queue = [];
+        this.queue = [];
     }
-  
+    // Method enqueue digunakan untuk menambahkan elemen ke dalam antrian prioritas.
     enqueue(node) {
-      this.queue.push(node);
-      this.queue.sort((a, b) => a.cost - b.cost);
+        this.queue.push(node);
+        this.queue.sort((a, b) => a.cost - b.cost); // Mengurutkan elemen berdasarkan cost dari terkecil ke terbesar.
     }
-  
+    // Method dequeue digunakan untuk mengambil elemen terdepan dari antrian prioritas.
     dequeue() {
-      return this.queue.shift();
+        return this.queue.shift();
     }
-  
+    // Method isEmpty digunakan untuk mengecek apakah antrian prioritas kosong atau tidak.
     isEmpty() {
-      return this.queue.length === 0;
+        return this.queue.length === 0;
     }
-  }
-  
-  class parrentNode {
+}
+class parrentNode {
+    // Membuat constructor dengan parameter id, parent, dan cost
     constructor(id, parrent, cost) {
-      this.id = id;
-      this.parrent = parrent;
-      this.cost = cost;
+        this.id = id; // variabel untuk menyimpan id node
+        this.parrent = parrent; // variabel untuk menyimpan node parrent
+        this.cost = cost; // variabel untuk menyimpan cost dari node saat ini
     }
-  }
+}
 class Node {
     // Membuat constructor dengan parameter name, lat, dan lon
     constructor(name, lat, lon) {

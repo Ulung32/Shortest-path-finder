@@ -46,7 +46,6 @@
         {"from": "Perikanan", "to": "Rumah Rifqi"},
         {"from": "Rumah Rifqi", "to": "Tape Ketan"},
         {"from": "SMPN 1 Muntilan", "to": "Tape Ketan"},
-        {"from": "Tape Ketan", "to": "Watucongol"},
         {"from": "Tape Ketan", "to": "Pasar Jambu"},
         {"from": "Pasar Jambu", "to": "Warung Blendrang"},
         {"from": "Warung Blendrang", "to": "Watucongol"},

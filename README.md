@@ -89,6 +89,19 @@ git clone https://github.com/Ulung32/Tucil3_13521122_13521166.git
 
 ## Screenshots
 ON GOING
+```
+<p>
+  <img src="/img/SS1.png/">
+  <p>Figure 1. Config File (*txt)</p>
+  <nl>
+  <img src="/img/SS2.png/">
+  <p>Figure 2. Initial Appearance of the Program</p>
+  <nl>
+  <img src="/img/SS3.png/">
+  <p>Figure 3. Result</p>
+  <nl>
+</p>
+```
 
 <a name="structure"></a>
 
