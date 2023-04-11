@@ -78,6 +78,7 @@ git clone https://github.com/Ulung32/Tucil3_13521122_13521166.git
 8. Masukkan `titik awal dan titik akhir` yang akan dicari rute terpendeknya
 9. Program akan menampilkan peta yang telah ditentukan oleh pengguna beserta lintasan terpendek yang telah ditemukan oleh program
 10. `Jarak lintasan terpendek` akan ditampilkan pada bagian bawah peta serta `rute` yang dilalui akan berwarna merah
+11. Alternatif lain, program dapat diakses melalui link berikut [ini](https://tucil-3-g7s9.vercel.app/)
 
 <a name="video-captures"></a>
 
